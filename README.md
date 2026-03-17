@@ -10,10 +10,10 @@ Proteins do not act in isolation--they interact with one another in signaling pa
 Proteins exist in specialized families or communities, performing similar, highly-specific functions. However, a single protein may be crucial to initiating and participating in multiple pathways, acting as so-called bridges. Within graphs, bridge proteins can be identified using *Betweenness Centrality*, measuring how frequently a node appears in the shortest path between any two nodes. 
 
 ### JAK/STAT and HTT
-- The JAK/STAT signaling pathway is key in regulating gene transcription for pro-inflammatory signaling, cell division, and cell death. Pathway initiation depends on a cyotkine ligand binding to a a pair of cytokine receptors, causing receptor dimerization. The dimer is subsequently phosphorylated by JAK proteins, providing binding scaffolding for STAT proteins which are auto-phosphorylated by JAKs. The STATs can then dimerize and enter the nucleus, binding DNA and leading to specific gene trasncription.
+- The JAK/STAT signaling pathway is key in regulating gene transcription for pro-inflammatory signaling, cell division, and cell death. Pathway initiation depends on a cytokine ligand binding to a a pair of cytokine receptors, causing receptor dimerization. The dimer is subsequently phosphorylated by JAK proteins, providing binding scaffolding for STAT proteins which are auto-phosphorylated by JAKs. The STATs can then dimerize and enter the nucleus, binding DNA and leading to specific gene transcription.
 - Huntingtin, or HTT, is a multi-domain protein necessary for the development of the nervous system and cellular transport. Furthermore, it is vital for synaptic health by promoting the production of BNDF, a neurotrophic factor influential in sustained neuron growth and survival. Huntington's disease is strongly linked to the misfolding of HTT as caused by polyglutamine expansion in its associated gene.
 
-In molecular biology, inflammatory signaling (JAK/STAT) and neurodegeneration (HTT misfunction) are often connected. By linking the bridge proteins between two important pathways, we can identify nodes where a signaling error triggers a collapse across the body, leading to disease such as Huntington's. 
+In molecular biology, inflammatory signaling (JAK/STAT) and neurodegeneration (HTT malfunction) are often connected. By linking the bridge proteins between two important pathways, we can identify nodes where a signaling error triggers a collapse across the body, leading to disease such as Huntington's. 
 
 ## Implementation
 
@@ -35,6 +35,18 @@ The final output is a D3.js-based dashboard allowing for real-time exploration o
 The radius of each node is proportional to its Betweenness Centrality score, with larger nodes indicating a higher score and increased role as a bridge protein. The physics engine naturally segregates the network into functional clusters. In this specific analysis, the pro-inflammatory JAK/STAT signaling module and the HTT transport module appear as distinct communities, joined by bridge nodes. The top 10 proteins with the highest Betweenness Centrality are color-coded and scaled.
 
 Every node is interactive. Clicking a protein node opens its associated UniProt database entry, providing access to its subcellular location, molecular function, and sequence data across species.
+
+## Top bridge proteins identified:
+1. STAT3
+2. HTT
+3. MAPK1
+4. MAPK3
+5. TP53
+6. AKT1
+7. EGFR
+8. IL6
+9. JAK2
+10. STAT1
 
 ## Usage
 
@@ -67,7 +79,7 @@ python main.py
 - Customization: Adjust the font, color palette, and node opacity directly in the dashboard.
 
 ## Next Steps
-While the current interactome models protein-protein interaction in terms of fixed, given confidence scores, it must be validated against live data. Furthermore, the pipeline could implement a targeted knock out feature on bridge proteins, measuring the protein's impact on the global interactome and highlight which pathways fail as a result. The intensity of the knockout could be assigned as scores to the proteins, demonstrating which bridge proteins are most important between which pathways. The modular system could further be configured to other neurogenerative diseases such as Alzheimer's by creating a different subgraph.
+While the current interactome models protein-protein interaction in terms of fixed, given confidence scores, it must be validated against live data. Furthermore, the pipeline could implement a targeted knock out feature on bridge proteins, measuring the protein's impact on the global interactome and highlight which pathways fail as a result. The intensity of the knockout could be assigned as scores to the proteins, demonstrating which bridge proteins are most important between which pathways. The modular system could further be configured to other neurodegenerative diseases such as Alzheimer's by creating a different subgraph.
 
 
 
