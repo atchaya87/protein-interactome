@@ -1,0 +1,12 @@
+# Network Parameters
+min_confidence: 700
+important_proteins: ["JAK1", "STAT3", "MAPK1", "HTT"]
+
+# Visualization Settings
+layout_k: 1.2
+layout_iterations: 100
+random_seed: 42
+
+# File Paths
+links_path: "C:/Users/Owner/Downloads/9606.protein.links.v12.0.txt/9606.protein.links.v12.0.txt"
+info_path: "C:/Users/Owner/Downloads/9606.protein.links.v12.0.txt/9606.protein.info.v12.0.txt"
